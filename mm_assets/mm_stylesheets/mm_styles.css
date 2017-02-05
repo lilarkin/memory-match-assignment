@@ -1,0 +1,10 @@
+button {
+  border: 2px solid #f8bbd0 !important;
+  height: 125px !important;
+  padding: 0 !important;
+}
+
+button img {
+  height: 100%;
+  /*padding: 25px, 0, 0, 0 !important;*/
+}
