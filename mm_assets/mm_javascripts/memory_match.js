@@ -2,7 +2,7 @@ $(document).ready(function() {
   var $button = $('.btn');
   var $image = $('.img');
 
-  var tiles = ['mm_assets/mm_images/img1.JPG',
+  let tiles = ['mm_assets/mm_images/img1.JPG',
               'mm_assets/mm_images/img1.JPG',
               'mm_assets/mm_images/img2.JPG',
               'mm_assets/mm_images/img2.JPG', 
@@ -19,49 +19,51 @@ $(document).ready(function() {
               'mm_assets/mm_images/img8.JPG', 
               'mm_assets/mm_images/img8.JPG'];
 
-var memoryValues = [];
-var tilesFlipprd = 0;
+let tileValues = [];
 
-function memoryFlipTile(val){
-	if (memoryValues.length < 2) {
+var tile1, tile2
+
+// assign each image to 2 tiles with a for loop
+for (i = 0; i < 8; i++) { 
+  let rand  = 1 + Math.floor(Math.random() * 8); 
+  let img = 'mm_assets/mm_images/img' + rand + '.JPEG';
+  tileValues.push(img);
+  tileValues.push(img);
+}
+// var tilesFlipped = 0;
+
+// flipTile = (val) => {
+// 	if (tileValues.length < 2) {
 		// what do i do here? value needs to access tiles array
-		if(memoryValues.length === 0) {
-			memoryValues.push(val);
-		} else if(memoryValues.length === 1){
-			memoryValues.push(val);
-			if(memoryValues[0] == memoryValues[1]){
-				tilesFlipped += 2;
+		// if(memoryValues.length === 0) {
+		// 	memoryValues.push(val);
+		// } else if(memoryValues.length === 1){
+		// 	memoryValues.push(val);
+		// 	if(memoryValues[0] == memoryValues[1]){
+		// 		tilesFlipped += 2;
 				// Clear both array
-				memoryValues = [];
+				// memoryValues = [];
 				// Check to see if the whole board is cleared
-				if(tilesFlipped === tiles.length) {
-					alert("Board cleared.");
-					newBoard();
-				}
-			} else {
-				function flip2Back(){
+			// 	if(tilesFlipped === tiles.length) {
+			// 		alert("Board cleared.");
+			// 		newBoard();
+			// 	}
+			// } else {
+			// 	flipTwoBack = () => {
 				    // Flip the 2 tiles back over
-				    var tile1 = 
-				    var tile2 = 
+				    // var tile1 = 
+				    // var tile2 = 
 				    
 				    // Clear both arrays
-				    memoryValues = [];
-				}
-				setTimeout(flip2Back, 700);
-			}
-		}
-	}
-};
+// 				    memoryValues = [];
+// 				}
+// 				setTimeout(flip2Back, 700);
+// 			}
+// 		}
+// 	}
+// };
 
-// var tile1, tile2
 
-// assign each image to 2 tiles with a loop
-// for (var i = 0; i < 8; i++) { 
-//   var rand  = 1 + Math.floor(Math.random() * 8); 
-//   var img = 'mm_assets/mm_images/img/' + rand + '.JPEG';
-//   tiles.push(img);
-//   tiles.push(img);
-// }
 
 
 // tiles.forEach(function() {
@@ -72,15 +74,15 @@ function memoryFlipTile(val){
 // }
 
 // make this do the opposite, so white and shows image if clicked
-  $button.on('click', function(tile1, tile2) {
-    $(this).find('img').show();
-    //if match {
-      //face up
-      //alert('You found a match!')
-    //else
-      //alert('They do not match. Pick again.)
-      //face down
-    //}
+  // $button.on('click', function(tile1, tile2) {
+  //   $(this).find('img').show();
+  //   if match {
+  //     face up
+  //     alert('You found a match!')
+  //   else
+  //     alert('They do not match. Pick again.)
+  //     face down
+  //   }
   // });
 
   // identify if choice matches
